@@ -9,7 +9,7 @@ loadEnv();
 const app = express();
 app.use(json());
 
-app.get("/health", (req: Request, res: Response) => res.send("I'am alive!"));
+//app.get("/health", (req: Request, res: Response) => res.send("I'am alive!"));
 app.use(gamesRouter);
 app.use(consolesRouter);
 

@@ -1,5 +1,5 @@
 import { Game } from "@prisma/client";
-import prisma from "../../src/config/database";
+import prisma from "config/database";
 import { faker } from "@faker-js/faker";
 
 export function createGame(consoleId: number) {

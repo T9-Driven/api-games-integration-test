@@ -11,16 +11,17 @@ async function getConsoles() {
 async function getSpecificConsole(id: number) {
   const console = await consolesRepository.getSpecificConsole(id);
   if (!console) {
-    throw { message: "Console not found." }
+    throw { message: "Console not found." };
   }
 
   return console;
 }
 
 async function createConsole(console: ConsoleInput) {
-  const consoleAlreadyRegistered = await consolesRepository.getSpecificConsoleByName(console.name);
+  const consoleAlreadyRegistered =
+    await consolesRepository.getSpecificConsoleByName(console.name);
   if (consoleAlreadyRegistered) {
-    throw { message: "This console already exists!" }
+    throw { message: "This console already exists!" };
   }
 
   await consolesRepository.insertConsole(console);
@@ -29,7 +30,7 @@ async function createConsole(console: ConsoleInput) {
 const consolesService = {
   getConsoles,
   getSpecificConsole,
-  createConsole
-}
+  createConsole,
+};
 
 export default consolesService;

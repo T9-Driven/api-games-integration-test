@@ -14,8 +14,8 @@ import httpStatus from "http-status";
 const api = supertest(app);
 
 beforeEach(async () => {
-  await prisma.game.deleteMany();
-  await prisma.console.deleteMany();
+  await prisma.game.deleteMany({});
+  await prisma.console.deleteMany({});
 });
 
 describe("GET /games", () => {

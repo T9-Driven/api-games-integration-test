@@ -8,3 +8,17 @@ export function createConsole() {
     },
   });
 }
+
+export function findFirstConsole(name: string) {
+  return prisma.console.findFirst({
+    where: {
+      name: name,
+    },
+  });
+}
+
+export function generateConsole() {
+  return {
+    name: faker.company.name(),
+  };
+}
